@@ -1,0 +1,10 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Secure Weather Application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node test.js"
+  }
+}
