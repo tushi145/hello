@@ -1,20 +1,21 @@
-name: Greeting Workflow
+name: Python CI
 on: [push]
 
 jobs:
-  say-hello:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
       - name: Install pytest
         run: pip install pytest
 
-      - name: Run Python Tests
+      - name: Run tests
         run: pytest
