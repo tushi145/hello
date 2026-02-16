@@ -4,6 +4,17 @@ on: [push]
 jobs:
   say-hello:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Run a greeting
-        run: echo "The CI pipeline has successfully started!"
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run Python Tests
+        run: pytest
